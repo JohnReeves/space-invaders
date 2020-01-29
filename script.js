@@ -1,18 +1,17 @@
-var row1 = $("#row1");
+var attackers = $("#attackers");
 var count = 0;
-var row1Trans = {dX: 1, dY: 0};
+var attackersTrans = {dX: 1, dY: 0};
 
 function moveRow(){
   count++;
-  console.log(count);
   if (count%10 == 0) {
-    row1Trans.dY += 10;
-    row1Trans.dX -= 5;
+    attackersTrans.dY += 10;
+    attackersTrans.dX -= 50;
   }
   else 
-    row1Trans.dX += 5;
+    attackersTrans.dX += 5;
 
-  setTransform(row1, row1Trans);
+  setTransform(attackers, attackersTrans);
 }
 
 function setTransform (svg, svgTran) {
