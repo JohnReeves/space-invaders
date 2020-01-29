@@ -8,10 +8,12 @@ var elTranform = {
 };
 
 console.log(elTranform);
+setTransform(row1, elTransform);
 
-function setTransform (element, rotationArg, scaleArg, skewXArg, skewYArg) {
-    var transfromString = ("rotate(" + rotationArg + "deg ) scale(" + scaleArg
-        + ") skewX(" + skewXArg + "deg ) skewY(" + skewYArg + "deg )");
+function setTransform (element, elTransformArg) {
+    var transfromString = ("rotate(" + elTransformArg.rot + "deg ) scale("
+        + elTransformArg.sca + ") skewX(" + elTransformArg.skx + "deg ) skewY("
+        + elTransformArg.sky + "deg )");
 
 console.log(element);
 
@@ -23,4 +25,3 @@ console.log(element);
     element.style.transform = transfromString;
 }
 
-setTransform(row1, elTransform);

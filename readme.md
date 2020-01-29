@@ -2,6 +2,11 @@
 
 ## Task 1 - make some sprites
 
+
+* images from the internet;   
+* your own images; or .  
+* svg shapes.   
+
 defender; attackers; laser shots .  
 creapy sounds; laser shots .  
 
@@ -14,4 +19,6 @@ creapy sounds; laser shots .
 colour overlays or attributes .  
 
 ## Task 3 - add interactive controls
+
+css transforms; javascript attributes;    
 
