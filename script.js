@@ -1,3 +1,5 @@
+var row1 = $("#row1");
+
 var elTranform = {
     rot: 0,   // the rotation 'counter' for the element 'el'
     sca: 1,   // the scale 'counter' for the element 'el'
@@ -5,9 +7,13 @@ var elTranform = {
     sky: 0    // the skewY 'counter' for the element 'el'
 };
 
+console.log(elTranform);
+
 function setTransform (element, rotationArg, scaleArg, skewXArg, skewYArg) {
     var transfromString = ("rotate(" + rotationArg + "deg ) scale(" + scaleArg
         + ") skewX(" + skewXArg + "deg ) skewY(" + skewYArg + "deg )");
+
+console.log(element);
 
     // now attach that variable to each prefixed style
     element.style.webkitTransform = transfromString;
