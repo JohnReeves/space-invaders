@@ -32,4 +32,4 @@ function setTransform (svg, svgTran) {
 }
 
 setInterval(moveAttackers,500);
-setInterval(movelaserfire,500);
+setInterval(movelaserfire,200);
