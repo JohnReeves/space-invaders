@@ -1,6 +1,6 @@
 # Space invaders in HTML & Javascript
 
-## Task 1 - make some sprites
+## Task 1 - make some `html` sprites
 
 * make the paper .  
 
@@ -42,12 +42,6 @@
 * your own images; or .  
 * svg shapes.   
 
-defender; attackers; laser shots .  
-creapy sounds; laser shots .  
-
-* just ask Katia to make some :-) .  
-* what size .  
-* how pixelated .  
 
 ## Task 2 - add some movement and colour
 
