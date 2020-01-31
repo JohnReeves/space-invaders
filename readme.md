@@ -38,19 +38,26 @@
 <line id="laserfire" x1="300" x2="300" y1="400" y2="450" stroke-width="5" stroke="grey"/>
 ```
 
-* images from the internet;   
-* your own images; or .  
-* svg shapes.   
-
-
 ## Task 2 - add some movement and colour
 
+* use `css transforms` .  
+* use `javascript interval timers` .  
+* use `material design` colours .  
 colour overlays or attributes .  
 
 ## Task 3 - add interactive controls
 
-css transforms; javascript attributes;    
+* use the spacebar for laserfire .  
+
+* use arrow keys for the defender .  
+
+* detect a target .  
 
 bounding box contact in:   
 `https://repl.it/@JohnReeves/svg-interactions`
 
+## Task 4 - extend `your` space-invaders
+
+* images from the internet;   
+* your own images; or .  
+* svg shapes.   
