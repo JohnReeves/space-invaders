@@ -73,11 +73,15 @@ setInterval(movelaserfire,200);
 ```
 * use `material design` colours .  
 
+choose your favourites from [Material Design](https://material.io/design/color/the-color-system.html#color-usage-palettes) 
+
 I have tried to make mine match the old console game colours.
-
-Go to [Material Design](https://material.io/design/color/the-color-system.html#color-usage-palettes) and choose your favourites.
-
-colour overlays or attributes .  
+```javascript
+<!-- space backgound: fill="#212121"-->
+<!-- attackers:       fill="#8a8a8a" -->
+<!-- defender:        fill="#8a8a8a"-->
+<!-- laserfire:       stroke="grey"-->
+```
 
 ## Task 3 - add interactive controls
 
