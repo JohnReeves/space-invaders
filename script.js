@@ -1,9 +1,13 @@
 var invaders = $("#invaders");
+
 var attackers = $("#attackers");
-var count = 0;
 var attackersTrans = {dX: 1, dY: 0};
 var laserfire = $("#laserfire");
 var laserfireTrans = {dX: 0, dY: 1};
+var defender = $("#defender");
+var defenderTrans = {dX: 1, dY: 0};
+
+var count = 0;
 
 function moveAttackers(){
   count++;
@@ -17,20 +21,31 @@ function moveAttackers(){
   setTransform(attackers, attackersTrans);
 }
 
-function movelaserfire(){
+function moveLaserfire(){
   (count%30 == 0) ? 
-    laserfireTrans.dY = 0 :
+    laserfireTrans.dX = 0 :
     laserfireTrans.dY -= 10;
   setTransform(laserfire, laserfireTrans);
+}
+
+function moveDefender(){
+  (count%30 == 0) ? 
+    defenderTrans.dX -= 10 :
+    defenderTrans.dY = 0;
+  setTransform(defender, defenderTrans);
 }
 
 $('#invaders').hover(function(e) {
     //if(e.keyCode==13 || e.which){
         // Enter pressed... do anything here...
         console.log("keypressed ...");
-        movelaserfire();
+        moveDefender();
    // }
 });
+
+function isAttackerHit(){
+
+}
 
 function setTransform (svg, svgTran) {
     var svgTranString = 
@@ -41,4 +56,4 @@ function setTransform (svg, svgTran) {
 }
 
 setInterval(moveAttackers,500);
-//setInterval(movelaserfire,200);
+setInterval(moveLaserfire,200);
