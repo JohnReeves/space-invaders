@@ -40,7 +40,31 @@
 
 ## Task 2 - add some movement and colour
 
+* javascript variables
+```javascript
+var attackers = $("#attackers");
+var count = 0;
+var attackersTrans = {dX: 1, dY: 0};
+var laserfire = $("#laserfire");
+var laserfireTrans = {dX: 0, dY: 1};
+```
 * use `css transforms` .  
+```javascript
+function movelaserfire(){
+  (count%30 == 0) ? 
+    laserfireTrans.dY = 0 :
+    laserfireTrans.dY -= 10;
+  setTransform(laserfire, laserfireTrans);
+}
+
+function setTransform (svg, svgTran) {
+    var svgTranString = 
+    ("translatex("+svgTran.dX+"px) "+
+     "translatey("+svgTran.dY+"px)");
+
+    svg.attr("style","transform: "+svgTranString);
+}
+```
 * use `javascript interval timers` .  
 * use `material design` colours .  
 colour overlays or attributes .  
@@ -48,11 +72,8 @@ colour overlays or attributes .
 ## Task 3 - add interactive controls
 
 * use the spacebar for laserfire .  
-
 * use arrow keys for the defender .  
-
 * detect a target .  
-
 bounding box contact in:   
 `https://repl.it/@JohnReeves/svg-interactions`
 
