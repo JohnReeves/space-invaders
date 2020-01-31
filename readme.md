@@ -66,7 +66,17 @@ function setTransform (svg, svgTran) {
 }
 ```
 * use `javascript interval timers` .  
+
+```javascript
+setInterval(moveAttackers,500);
+setInterval(movelaserfire,200);
+```
 * use `material design` colours .  
+
+I have tried to make mine match the old console game colours.
+
+Go to [Material Design](https://material.io/design/color/the-color-system.html#color-usage-palettes) and choose your favourites.
+
 colour overlays or attributes .  
 
 ## Task 3 - add interactive controls
