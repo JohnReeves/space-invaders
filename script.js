@@ -10,7 +10,7 @@ var defenderTrans = {dX: 1, dY: 0};
 var count = 0;
 
 function moveAttackers(){
-  count++;
+  count++;console.log(count);
   if (count%10 == 0) {
     attackersTrans.dY += 10;
     attackersTrans.dX -= 50;
@@ -22,16 +22,15 @@ function moveAttackers(){
 }
 
 function moveLaserfire(){
-  (count%30 == 0) ? 
-    laserfireTrans.dX = 0 :
+  (count%20 == 0) ? 
+    laserfireTrans.dY = 0 :
     laserfireTrans.dY -= 10;
   setTransform(laserfire, laserfireTrans);
 }
 
 function moveDefender(){
-  (count%30 == 0) ? 
-    defenderTrans.dX -= 10 :
-    defenderTrans.dY = 0;
+ 
+    defenderTrans.dX -= 10 ;
   setTransform(defender, defenderTrans);
 }
 
