@@ -1,3 +1,4 @@
+var invaders = $("#invaders");
 var attackers = $("#attackers");
 var count = 0;
 var attackersTrans = {dX: 1, dY: 0};
@@ -23,6 +24,14 @@ function movelaserfire(){
   setTransform(laserfire, laserfireTrans);
 }
 
+$('#invaders').hover(function(e) {
+    //if(e.keyCode==13 || e.which){
+        // Enter pressed... do anything here...
+        console.log("keypressed ...");
+        movelaserfire();
+   // }
+});
+
 function setTransform (svg, svgTran) {
     var svgTranString = 
     ("translatex("+svgTran.dX+"px) "+
@@ -32,4 +41,4 @@ function setTransform (svg, svgTran) {
 }
 
 setInterval(moveAttackers,500);
-setInterval(movelaserfire,200);
+//setInterval(movelaserfire,200);
