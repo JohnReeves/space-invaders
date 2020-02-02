@@ -55,33 +55,16 @@ function isAttackerHit(){
 
 }
 
-function checkIfLaserfireHitInvader(userX, userY, circleID){
-    var points = $("#"+circleID+"Box").attr("points");
-    var coords = points.split(" ");
-    var firstCoords = coords[0].split(",");
+function checkIfLaserfireHitInvader(laserfire){
 
-    var minX = parseInt(firstCoords[0]);
-    var maxX = parseInt(firstCoords[0]);
-    
-    var minY = parseInt(firstCoords[1]);
-    var maxY = parseInt(firstCoords[1]);
 
- 
-    for (var i = 0; i < coords.length; i++){
-        
-        var coord = coords[i].split(",");
-        var x = parseInt(coord[0]);
-        var y = parseInt(coord[1]);
-        
-        if(x < minX) minX = x;
-        if(x > maxX) maxX = x;
-        
-        if(y < minY) minY = y;
-        if(y > maxY) maxY = y;
-    }
-    
-    if (userX > minX && userX < maxX &&
-        userY > minY && userY < maxY){
+    var centreX = $("#"+circleID+"5").attr("cx");
+    var radius = $("#"+circleID+"5").attr("r");
+
+    var minX = parseInt(centreX)-parseInt(radius);
+    var maxX = parseInt(centreX)+parseInt(radius);
+
+    if (userX > minX && userX < maxX){
         $("#"+circleID).attr("fill","#263238");
     }
     
