@@ -27,7 +27,7 @@ function moveLaserfire(){
     laserfireTrans.dY -= 10;
 
   setTransform(laserfire, laserfireTrans);
-  checkIfLaserfireHitInvader();
+  checkIfLaserfireHitInvader(laserfire);
 }
 
 function moveDefender(X){
@@ -51,21 +51,16 @@ $('#defender').hover(function(e) {
    // }
 });
 
-function isAttackerHit(){
-
-}
-
 function checkIfLaserfireHitInvader(laserfire){
-
-
-    var centreX = $("#"+circleID+"5").attr("cx");
-    var radius = $("#"+circleID+"5").attr("r");
+    var centreX = $("#attacker5").attr("cx");
+    var radius = $("#attacker5").attr("r");
 
     var minX = parseInt(centreX)-parseInt(radius);
     var maxX = parseInt(centreX)+parseInt(radius);
 
-    if (userX > minX && userX < maxX){
-        $("#"+circleID).attr("fill","#263238");
+    var laserX = laserfire.attr(x1)
+    if (laserX > minX && laserX < maxX){
+        $("#attacker5").attr("fill","#263238");
     }
     
 }
@@ -78,5 +73,7 @@ function setTransform (svg, svgTran) {
     svg.attr("style","transform: "+svgTranString);
 }
 
-setInterval(moveAttackers,500);
-setInterval(moveLaserfire,200);
+moveAttackers();
+moveLaserfire();
+//setInterval(moveAttackers,500);
+//setInterval(moveLaserfire,200);
