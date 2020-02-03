@@ -27,7 +27,7 @@ function moveLaserfire(){
     laserfireTrans.dY -= 10;
 
   setTransform(laserfire, laserfireTrans);
-  checkIfLaserfireHitInvader(laserfire);
+  checkIfLaserfireHitInvader(laserfire, laserfireTrans);
 }
 
 function moveDefender(X){
@@ -51,7 +51,7 @@ $('#defender').hover(function(e) {
    // }
 });
 
-function checkIfLaserfireHitInvader(laserfire){
+function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
   // height down the screen
   // needs to adjust height with transform
   //
@@ -62,7 +62,7 @@ function checkIfLaserfireHitInvader(laserfire){
     var minY = parseInt(centreY)-parseInt(radius);
     var maxY = parseInt(centreY)+parseInt(radius);
 
-    var laserY = 150; //laserfire.attr("y1")
+    var laserY = parseInt(laserfire.attr("y1"))-parseInt(laserfireTrans.dY);
     console.log("laserY: "+laserY+", centreY: "+centreY);
     if (laserY > minY && laserY < maxY){
         $("#attacker5").attr("fill","#263238");
