@@ -56,18 +56,24 @@ function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
   // needs to adjust height with transform
   //
   
-    var centreY = $("#attacker2").attr("cy");
-    var radius = $("#attacker2").attr("r");
+  for (i=0; i<11; i++){
+    var centreY = $("#attacker"+i).attr("cy");
+    var centreX = $("#attacker"+i).attr("cx");
+    var radius = $("#attacker"+i).attr("r");
 
     var minY = parseInt(centreY)-parseInt(radius);
     var maxY = parseInt(centreY)+parseInt(radius);
+    var minX = parseInt(centreX)-parseInt(radius);
+    var maxX = parseInt(centreX)-parseInt(radius);
 
     var laserY = parseInt(laserfire.attr("y1"))+parseInt(laserfireTrans.dY);
-    console.log("laserY: "+laserY+", centreY: "+centreY);
-    if (laserY > minY && laserY < maxY){
-        $("#attacker2").attr("fill","#263238");
+    var laserX = parseInt(laserfire.attr("x1"));
+    console.log("attacker"+i+" laserY: "+laserY+", centreY: "+centreY);
+    if ((laserY > minY && laserY < maxY) &&
+       (laserX > minX && laserX < maxX)){
+        $("#attacker"+i).attr("fill","#263238");
     }
-    
+  }
 }
 
 function setTransform (svg, svgTran) {
