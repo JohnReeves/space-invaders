@@ -56,16 +56,16 @@ function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
   // needs to adjust height with transform
   //
   
-    var centreY = $("#attacker3").attr("cy");
-    var radius = $("#attacker5").attr("r");
+    var centreY = $("#attacker2").attr("cy");
+    var radius = $("#attacker2").attr("r");
 
     var minY = parseInt(centreY)-parseInt(radius);
     var maxY = parseInt(centreY)+parseInt(radius);
 
-    var laserY = parseInt(laserfire.attr("y1"))-parseInt(laserfireTrans.dY);
+    var laserY = parseInt(laserfire.attr("y1"))+parseInt(laserfireTrans.dY);
     console.log("laserY: "+laserY+", centreY: "+centreY);
     if (laserY > minY && laserY < maxY){
-        $("#attacker5").attr("fill","#263238");
+        $("#attacker2").attr("fill","#263238");
     }
     
 }
@@ -78,7 +78,7 @@ function setTransform (svg, svgTran) {
     svg.attr("style","transform: "+svgTranString);
 }
 
-moveAttackers();
-moveLaserfire();
-//setInterval(moveAttackers,500);
-//setInterval(moveLaserfire,200);
+//moveAttackers();
+//moveLaserfire();
+setInterval(moveAttackers,500);
+setInterval(moveLaserfire,200);
