@@ -64,11 +64,11 @@ function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
     var minY = parseInt(centreY)-parseInt(radius);
     var maxY = parseInt(centreY)+parseInt(radius);
     var minX = parseInt(centreX)-parseInt(radius);
-    var maxX = parseInt(centreX)-parseInt(radius);
+    var maxX = parseInt(centreX)+parseInt(radius);
 
     var laserY = parseInt(laserfire.attr("y1"))+parseInt(laserfireTrans.dY);
     var laserX = parseInt(laserfire.attr("x1"));
-    console.log("attacker"+i+" laserY: "+laserY+", centreY: "+centreY);
+
     if ((laserY > minY && laserY < maxY) &&
        (laserX > minX && laserX < maxX)){
         $("#attacker"+i).attr("fill","#263238");
@@ -84,7 +84,7 @@ function setTransform (svg, svgTran) {
     svg.attr("style","transform: "+svgTranString);
 }
 
-//moveAttackers();
-//moveLaserfire();
-setInterval(moveAttackers,500);
-setInterval(moveLaserfire,200);
+moveAttackers();
+moveLaserfire();
+//setInterval(moveAttackers,500);
+//setInterval(moveLaserfire,200);

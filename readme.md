@@ -88,6 +88,17 @@ I have tried to make mine match the old console game colours.
 * use the spacebar for laserfire .  
 * use arrow keys for the defender .  
 * detect a target .  
+
+you will need to check if the x & y positions of the laser fire are within the x & y positions of each attacker:
+
+```javascript
+if ((laserY > minY && laserY < maxY) &&
+    (laserX > minX && laserX < maxX)){
+    $("#attacker"+i).attr("fill","#263238");
+  }
+```
+
+
 bounding box contact in:   
 `https://repl.it/@JohnReeves/svg-interactions`
 
