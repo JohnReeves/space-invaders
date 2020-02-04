@@ -33,6 +33,7 @@ function moveLaserfire(){
 function moveDefender(X){
     defenderTrans.dX -= X ;
   setTransform(defender, defenderTrans);
+  setTransform(laserfire, defenderTrans);
 }
 
 $('#invaders').hover(function(e) {
@@ -84,7 +85,7 @@ function setTransform (svg, svgTran) {
     svg.attr("style","transform: "+svgTranString);
 }
 
-moveAttackers();
-moveLaserfire();
-//setInterval(moveAttackers,500);
-//setInterval(moveLaserfire,200);
+//moveAttackers();
+//moveLaserfire();
+setInterval(moveAttackers,500);
+setInterval(moveLaserfire,200);
