@@ -32,6 +32,7 @@ function moveLaserfire(){
 
 function moveDefender(X){
     defenderTrans.dX -= X ;
+    laserfireTrans.dX -= X;
   setTransform(defender, defenderTrans);
   setTransform(laserfire, defenderTrans);
 }
@@ -56,7 +57,7 @@ function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
   // height down the screen
   // needs to adjust height with transform
   //
-  
+  console.log(laserfireTrans);
   for (i=0; i<11; i++){
     var centreY = $("#attacker"+i).attr("cy");
     var centreX = $("#attacker"+i).attr("cx");
