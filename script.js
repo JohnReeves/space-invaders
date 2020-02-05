@@ -74,7 +74,10 @@ function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
     var maxX = parseInt(centreX)+parseInt(radius);
 
     var laserY = parseInt(laserfire.attr("y1"))+parseInt(laserfireTrans.dY);
-    var laserX = parseInt(laserfire.attr("x1"));
+    var laserX = parseInt(laserfire.attr("x1"))+parseInt(laserfireTrans.dX);
+
+console.log("Y:"+laserY+">"+minY+"&&"+laserY+"<"+maxY);
+console.log("X:"+laserX+">"+minX+"&&"+laserX+"<"+maxX);
 
     if ((laserY > minY && laserY < maxY) &&
        (laserX > minX && laserX < maxX)){
