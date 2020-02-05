@@ -13,6 +13,7 @@ var defenderTrans = {dX: 1, dY: 0};
 
 var count = 0;
 
+// movement functions
 function moveAttackers(){
   count++;
   if (count%10 == 0) {
@@ -62,7 +63,7 @@ $('#defender').hover(function(e) {
 function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
   // bounding box on each attacker object
 
-  console.log(laserfireTrans);
+  // console.log(laserfireTrans);
   for (i=0; i<11; i++){
     var centreY = $("#attacker"+i).attr("cy");
     var centreX = $("#attacker"+i).attr("cx");
@@ -76,8 +77,8 @@ function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
     var laserY = parseInt(laserfire.attr("y1"))+parseInt(laserfireTrans.dY);
     var laserX = parseInt(laserfire.attr("x1"))+parseInt(laserfireTrans.dX);
 
-console.log("Y:"+laserY+">"+minY+"&&"+laserY+"<"+maxY);
-console.log("X:"+laserX+">"+minX+"&&"+laserX+"<"+maxX);
+    //console.log("Y:"+laserY+">"+minY+"&&"+laserY+"<"+maxY);
+    //console.log("X:"+laserX+">"+minX+"&&"+laserX+"<"+maxX);
 
     if ((laserY >= minY && laserY <= maxY) &&
        (laserX >= minX && laserX <= maxX)){
