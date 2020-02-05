@@ -79,8 +79,8 @@ function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
 console.log("Y:"+laserY+">"+minY+"&&"+laserY+"<"+maxY);
 console.log("X:"+laserX+">"+minX+"&&"+laserX+"<"+maxX);
 
-    if ((laserY > minY && laserY < maxY) &&
-       (laserX > minX && laserX < maxX)){
+    if ((laserY >= minY && laserY <= maxY) &&
+       (laserX >= minX && laserX <= maxX)){
         $("#attacker"+i).attr("fill","#263238");
     }
   }
