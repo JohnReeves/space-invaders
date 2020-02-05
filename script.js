@@ -1,5 +1,9 @@
+var debug = false;
+
+// the canvas
 var invaders = $("#invaders");
 
+// the actors
 var attackers = $("#attackers");
 var attackersTrans = {dX: 1, dY: 0};
 var laserfire = $("#laserfire");
@@ -37,6 +41,8 @@ function moveDefender(X){
   setTransform(laserfire, defenderTrans);
 }
 
+// prototyping with mouse events because
+// i was struggling with the aswd key events
 $('#invaders').hover(function(e) {
     //if(e.keyCode==13 || e.which){
         // Enter pressed... do anything here...
@@ -54,9 +60,8 @@ $('#defender').hover(function(e) {
 });
 
 function checkIfLaserfireHitInvader(laserfire, laserfireTrans){
-  // height down the screen
-  // needs to adjust height with transform
-  //
+  // bounding box on each attacker object
+
   console.log(laserfireTrans);
   for (i=0; i<11; i++){
     var centreY = $("#attacker"+i).attr("cy");
@@ -86,7 +91,10 @@ function setTransform (svg, svgTran) {
     svg.attr("style","transform: "+svgTranString);
 }
 
-//moveAttackers();
-//moveLaserfire();
-setInterval(moveAttackers,500);
-setInterval(moveLaserfire,200);
+if (debug){
+  moveAttackers();
+  moveLaserfire();
+} else {
+  setInterval(moveAttackers,500);
+  setInterval(moveLaserfire,200);
+}
